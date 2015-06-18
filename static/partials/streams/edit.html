@@ -1,0 +1,11 @@
+<h3>{{action}} stream</h3>
+<form ng-submit="save()" novalidate>
+  <div>
+    <label>Stream name</label>
+    <input ng-model="stream.name" required />
+  </div>
+  <hr />
+  <twitter-list users="stream.users"></twitter-list>
+  <input type="submit" value="Save" />
+  <a href="/streams">Cancel</a>
+</form>

@@ -1,0 +1,8 @@
+<h3>Viewing {{stream.name}}</h3>
+
+<ul>
+  <li ng-repeat="t in allTweets">
+    <h6>@{{t.user.screen_name}}</h6>
+    <p>{{t.text}}</p>
+  </li>
+</ul>

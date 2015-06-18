@@ -1,0 +1,26 @@
+{
+  "name": "tweet-stream",
+  "version": "0.0.0",
+  "description": "A real time stream from Twitter using MEAN stack ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dowhileluke/tweet-stream.git"
+  },
+  "author": "Luke Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dowhileluke/tweet-stream/issues"
+  },
+  "dependencies": {
+    "express": "~4.12.4",
+    "mongoose": "~4.0.5",
+    "socket.io": "~1.3.5",
+    "passport": "~0.2.2",
+    "passport-local": "~1.0.0",
+    "body-parser": "~1.13.0"
+  }
+}

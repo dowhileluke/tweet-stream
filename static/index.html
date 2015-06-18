@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="tweet-stream">
+  <head>
+    <title>tweet-stream</title>
+    <meta charset="utf-8" />
+    <base href="/">
+    <link rel="stylesheet" href=".css" />
+  </head>
+  <body>
+    <div id="content" ng-controller="MainCtrl">
+      <h1>tweet-stream</h1>
+      <ul id="nav">
+        <li><a href="/">Home</a></li>
+        <li ng-show="user"><a href="/streams">Streams</a></li>
+        <li ng-hide="user"><a href="/account/login">Log in</a></li>
+        <li ng-hide="user"><a href="/account/register">Register</a></li>
+        <li ng-show="user"><a href="/account/logout">Log out</a> ({{user.username}})</li>
+      </ul>
+      <div ng-view></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-resource.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="static/vendor/socket.min.js"></script>
+    <script src="static/app.js"></script>
+  </body>
+</html>

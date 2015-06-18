@@ -1,0 +1,12 @@
+<h3>Log In</h3>
+<form ng-submit="login()" novalidate>
+  <div>
+    <label>Username</label>
+    <input ng-model="account.username" required placeholder="Username" />
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" ng-model="account.password" required placeholder="Password" />
+  </div>
+  <input type="submit" value="Log in" />
+</form>
