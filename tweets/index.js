@@ -1,6 +1,6 @@
 var db = require('../db');
 var twitter = require('twitter');
-var twitConfig = require('../config/twitter.json');
+var twitConfig = require('../config/twitter.js');
 var twitterApi = twitter(twitConfig);
 
 var fn = module.exports = {};
