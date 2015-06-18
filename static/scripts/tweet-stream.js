@@ -1,6 +1,8 @@
 'use strict';
 
-var app = angular.module('tweet-stream', ['ngRoute', 'tweet-stream-controllers', 'tweet-stream-services']);
+var app = angular.module('tweet-stream', ['ngRoute', 'tweet-stream-controllers', 'tweet-stream-services', 'infinite-scroll']);
+
+angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 1000)
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   var path = '/static/partials/';

@@ -85,6 +85,7 @@ app.controller('StreamsRealtimeCtrl', function ($scope, Account, Stream, $routeP
 
   var oldest;
   $scope.allTweets = [];
+  $scope.pending = true;
   var streamId = $routeParams.id;
   var stream = $scope.stream = Stream.get({id: streamId}, function () {
     socket.emit('subscribe', stream);
@@ -99,7 +100,9 @@ app.controller('StreamsRealtimeCtrl', function ($scope, Account, Stream, $routeP
     $scope.allTweets.unshift(tweet);
   };
 
-  function getTweets() {
+  var getTweets = $scope.getTweets = function () {
+    $scope.pending = true;
+
     var options = {
       stream: stream
     };
@@ -111,10 +114,15 @@ app.controller('StreamsRealtimeCtrl', function ($scope, Account, Stream, $routeP
     $http.post('/api/twitter/load', options).then(function (result) {
       var tweets = result.data.statuses;
 
-      if (tweets.length) {
+      if (tweets && tweets.length) {
         $scope.allTweets = $scope.allTweets.concat(tweets);
         oldest = tweets.reverse()[0].id;
       };
+
+      $scope.pending = false;
+    }).catch(function (reason) {
+      $log.error(reason);
+      // $scope.pending = false;
     });
   };
 });

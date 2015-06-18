@@ -1,9 +1,9 @@
 <h3>Viewing {{stream.name}}</h3>
 <br />
-<table class="table table-striped">
+<table class="table table-striped" infinite-scroll="getTweets()" infinite-scroll-distance="1" infinite-scroll-disabled="pending">
   <tr ng-repeat="t in allTweets">
     <td><img src="{{t.user.profile_image_url}}" /></td>
-    <td>@{{t.user.screen_name}}</td>
+    <td><a href="https://twitter.com/{{t.user.screen_name}}">@{{t.user.screen_name}}</a></td>
     <td>{{t.text}}</td>
   </tr>
   <tr ng-hide="allTweets.length">
