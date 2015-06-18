@@ -1,14 +1,19 @@
 <h3>Register</h3>
-<form ng-submit="register()" novalidate>
-  <div>
-    <label>Desired username</label>
-    <input ng-model="account.username" name="username" required placeholder="Username" />
+<div class="row">
+  <div class="col-xs-4">
+    <form ng-submit="register()" novalidate>
+      <div class="form-group">
+        <label>Desired username</label>
+        <input ng-model="account.username" name="username" class="form-control" required placeholder="Username" ng-model-options="{ debounce: 500 }" />
+        <div class="help-block" ng-show="usernameInvalid()">A username is required!</div>
+      </div>
+      <div class="form-group">
+        <label>Password (twice)</label>
+        <input type="password" ng-model="account.password" name="password" class="form-control" required placeholder="Password" />
+        <br />
+        <input type="password" ng-model="account.again" name="confirm" class="form-control" required placeholder="Password again" />
+      </div>
+      <input type="submit" value="Register" class="btn btn-primary" />
+    </form>
   </div>
-  <div>
-    <label>Password (twice)</label>
-    <input type="password" ng-model="account.password" name="password" class="form-control" required placeholder="Password" />
-    <br />
-    <input type="password" ng-model="account.again" name="confirm" class="form-control" required placeholder="Password again" />
-  </div>
-  <input type="submit" value="Register" />
-</form>
+</div>

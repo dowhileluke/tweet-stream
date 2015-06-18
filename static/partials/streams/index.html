@@ -1,10 +1,18 @@
-<h3>Streams</h3>
-<p><a href="/streams/new">New</a></p>
-<ul>
-  <li ng-repeat="s in streams" ng-hide="s.deleted">
-    <a href="/streams/{{s._id}}">{{s.name}}</a>
-    (<a href="/streams/{{s._id}}/edit">edit</a>)
-    <span ng-click="delete($index)">(X)</span>
-  </li>
-  <li ng-hide="streams.length">No streams!</li>
-</ul>
+<h3>My Streams</h3>
+<table class="table table-striped">
+  <tr ng-show="streams.length">
+    <th>Stream name</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="s in streams" ng-hide="s.deleted">
+    <td>
+      <a href="/streams/{{s._id}}">{{s.name}}</a>
+    </td>
+    <td>
+      <a href="/streams/{{s._id}}/edit"><i class="glyphicon glyphicon-pencil"></i></a>
+      <i class="glyphicon glyphicon-trash" ng-click="delete($index)"></i>
+    </td>
+  </tr>
+</table>
+<br />
+<p><a href="/streams/new" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> New</a></p>

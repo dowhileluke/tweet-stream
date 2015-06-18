@@ -1,8 +1,14 @@
 <h3>Viewing {{stream.name}}</h3>
-
-<ul>
-  <li ng-repeat="t in allTweets">
-    <h6>@{{t.user.screen_name}}</h6>
-    <p>{{t.text}}</p>
-  </li>
-</ul>
+<br />
+<table class="table table-striped">
+  <tr ng-repeat="t in allTweets">
+    <td><img src="{{t.user.profile_image_url}}" /></td>
+    <td>@{{t.user.screen_name}}</td>
+    <td>{{t.text}}</td>
+  </tr>
+  <tr ng-hide="allTweets.length">
+    <td></td>
+    <td>No tweets to show...</td>
+    <td></td>
+  </tr>
+</table>
