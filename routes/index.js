@@ -4,7 +4,7 @@ var db = require('../db');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var twitter = require('twitter');
-var twitConfig = require('../config/twitter.json');
+var twitConfig = require('../config/twitter.js');
 var twitterApi = twitter(twitConfig);
 
 var api = module.exports = express.Router();

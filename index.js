@@ -6,7 +6,7 @@ var io = require('socket.io')(server);
 var routes = require('./routes');
 var db = require('./db');
 var tweets = require('./tweets');
-var dbConfig = require('./config/mongo.json');
+var dbConfig = require('./config/mongo.js');
 
 db.connect(dbConfig.connStr);
 
